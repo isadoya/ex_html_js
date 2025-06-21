@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17 - Quiz de Matemática</title>
+</head>
+<body>
+    <h1>Quiz de Matemática</h1>
+    <form id="quiz">
+        <p>1. Quanto é 2 + 2?</p>
+        <input type="radio" name="q1" value="a"> 3<br>
+        <input type="radio" name="q1" value="b"> 4<br>
+        <input type="radio" name="q1" value="c"> 5<br>
+
+        <p>2. Quanto é 5 * 3?</p>
+        <input type="radio" name="q2" value="a"> 10<br>
+        <input type="radio" name="q2" value="b"> 15<br>
+        <input type="radio" name="q2" value="c"> 20<br>
+
+        <p>3. Quanto é 10 / 2?</p>
+        <input type="radio" name="q3" value="a"> 2<br>
+        <input type="radio" name="q3" value="b"> 5<br>
+        <input type="radio" name="q3" value="c"> 10<br>
+
+        <button type="button" onclick="corrigir()">Corrigir</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function corrigir() {
+            const respostas = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+
+            let acertos = 0;
+
+            // Verifica cada pergunta
+            for (let i = 1; i <= 3; i++) {
+                const questao = `q${i}`;
+                const respostaSelecionada = document.querySelector(`input[name="${questao}"]:checked`);
+
+                if (respostaSelecionada && respostaSelecionada.value === respostas[questao]) {
+                    acertos++;
+                }
+            }
+
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = `Você acertou ${acertos} de 3 perguntas.`;
+        }
+    </script>
+</body>
+</html>
