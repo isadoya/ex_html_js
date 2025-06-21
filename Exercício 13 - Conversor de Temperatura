@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 - Conversor de Temperatura</title>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <input type="number" id="temperatura" placeholder="Digite a temperatura">
+    <button onclick="converterParaCelsius()">Converter para °C</button>
+    <button onclick="converterParaFahrenheit()">Converter para °F</button>
+    <p id="resultado"></p>
+
+    <script>
+        function converterParaCelsius() {
+            const fahrenheit = parseFloat(document.getElementById('temperatura').value);
+            const resultado = document.getElementById('resultado');
+
+            if (isNaN(fahrenheit)) {
+                resultado.textContent = 'Por favor, digite um número.';
+                return;
+            }
+
+            const celsius = (fahrenheit - 32) * 5/9;
+            resultado.textContent = `${fahrenheit}°F equivalem a ${celsius.toFixed(2)}°C`;
+        }
+
+        function converterParaFahrenheit() {
+            const celsius = parseFloat(document.getElementById('temperatura').value);
+            const resultado = document.getElementById('resultado');
+
+            if (isNaN(celsius)) {
+                resultado.textContent = 'Por favor, digite um número.';
+                return;
+            }
+
+            const fahrenheit = (celsius * 9/5) + 32;
+            resultado.textContent = `${celsius}°C equivalem a ${fahrenheit.toFixed(2)}°F`;
+        }
+    </script>
+</body>
+</html>
