@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <ul id="tabuada"></ul>
+
+    <script>
+        function gerarTabuada() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const tabuadaLista = document.getElementById('tabuada');
+            tabuadaLista.innerHTML = ''; // Limpa a lista
+
+            if (isNaN(numero)) {
+                alert('Por favor, digite um número válido.');
+                return;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                const item = document.createElement('li');
+                item.textContent = ${numero} x ${i} = ${numero * i};
+                tabuadaLista.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>
