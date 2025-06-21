@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <p>Que filme nacional ganhou um Oscar?</p>
+    <form id="quiz">
+        <input type="radio" name="resposta" value="a"> Cidade de Deus<br>
+        <input type="radio" name="resposta" value="b"> Ainda Estou Aqui<br>
+        <input type="radio" name="resposta" value="c"> Que Horas Ela Volta<br>
+        <input type="radio" name="resposta" value="d"> Minha mãe é uma peça<br>
+        <button type="button" onclick="verificarResposta()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarResposta() {
+            const resposta = document.querySelector('input[name="resposta"]:checked');
+            const resultado = document.getElementById('resultado');
+
+            if (!resposta) {
+                resultado.textContent = 'Por favor, selecione uma opção.';
+                return;
+            }
+
+            if (resposta.value === 'b') {
+                resultado.textContent = 'Correto!';
+                resultado.style.color = 'green';
+            } else {
+                resultado.textContent = 'Incorreto. A resposta correta é Brasília.';
+                resultado.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
