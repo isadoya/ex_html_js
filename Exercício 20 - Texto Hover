@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20 - Texto Hover</title>
+</head>
+<body>
+    <p id="textoHover">Passe o mouse sobre este texto.</p>
+
+    <script>
+        const textoHover = document.getElementById('textoHover');
+        const textoOriginal = textoHover.textContent;
+
+        textoHover.addEventListener('mouseover', function() {
+            this.textContent = 'Mouse sobre o texto!';
+        });
+
+        textoHover.addEventListener('mouseout', function() {
+            this.textContent = textoOriginal;
+        });
+    </script>
+</body>
+</html>
