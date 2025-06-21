@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22 - Esconder Parágrafo</title>
+</head>
+<body>
+    <p id="paragrafo">Clique duas vezes neste parágrafo para escondê-lo.</p>
+
+    <script>
+        const paragrafo = document.getElementById('paragrafo');
+        paragrafo.addEventListener('dblclick', function() {
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
