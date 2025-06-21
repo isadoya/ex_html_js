@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 - Média de Notas</title>
+</head>
+<body>
+    <h1>Cálculo de Média</h1>
+    <input type="number" id="nota1" placeholder="Nota 1">
+    <input type="number" id="nota2" placeholder="Nota 2">
+    <input type="number" id="nota3" placeholder="Nota 3">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="media"></p>
+    <p id="situacao"></p>
+
+    <script>
+        function calcularMedia() {
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+            const mediaElement = document.getElementById('media');
+            const situacaoElement = document.getElementById('situacao');
+
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert('Por favor, digite números válidos em todos os campos.');
+                return;
+            }
+
+            const media = (nota1 + nota2 + nota3) / 3;
+            mediaElement.textContent = `Média: ${media.toFixed(2)}`;
+
+            if (media >= 7) {
+                situacaoElement.textContent = 'Aprovado';
+                situacaoElement.style.color = 'green';
+            } else {
+                situacaoElement.textContent = 'Reprovado';
+                situacaoElement.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
