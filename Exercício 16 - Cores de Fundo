@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 - Cores de Fundo</title>
+</head>
+<body>
+    <h1>Escolha uma cor de fundo:</h1>
+    <input type="radio" name="cor" value="vermelho" onchange="mudarCor('red')"> Vermelho<br>
+    <input type="radio" name="cor" value="azul" onchange="mudarCor('blue')"> Azul<br>
+    <input type="radio" name="cor" value="amarelo" onchange="mudarCor('yellow')"> Amarelo<br>
+    <input type="radio" name="cor" value="branco" onchange="mudarCor('white')"> Branco<br>
+
+    <script>
+        function mudarCor(cor) {
+            document.body.style.backgroundColor = cor;
+        }
+    </script>
+</body>
+</html>
